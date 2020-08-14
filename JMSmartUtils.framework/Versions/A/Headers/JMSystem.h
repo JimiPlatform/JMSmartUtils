@@ -10,10 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#ifndef UUID_MAX_LENGTH
 #define UUID_MAX_LENGTH 64
+#endif
 
-@interface JMSystem:NSObject
-
+@interface JMSystem : NSObject
 
 /// 系统的版本号
 + (NSString *)jm_systemVersion;

@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 反转数组
 - (NSArray *)jm_reverseArray;
 
+/// 转Json字符串
+- (NSString *)jm_toJsonString;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -37,6 +37,31 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param s 虚线间的空隙大小
 - (void)jm_drawDashLineWithStartPoint:(CGPoint)sPoint endPoint:(CGPoint)ePoint color:(UIColor *)color w:(CGFloat)w s:(CGFloat)s;
 
+/// 画圆角
+/// @param cornerRadii 圆角大小
+/// @param frame 视图frame
+- (void)drawRadiuWithView:(UIView *)view cornerRadii:(CGSize)cornerRadii frame:(CGRect)frame;
+
+/// 给视图画虚线边框
+/// @param borderWidth 线宽
+/// @param cornerRadii 边框角度
+/// @param view 要操作视频
+/// @param w 一格虚线的宽
+/// @param s 虚线的间距
+/// @param strokeColor 线的颜色
+- (void)drawBorderWithborderWidth:(CGFloat)borderWidth cornerRadii:(CGSize)cornerRadii view:(UIView *)view w:(CGFloat)w s:(CGFloat)s strokeColor:(UIColor *)strokeColor;
+
+/// 给视图画实线边框
+/// @param borderWidth 线宽
+/// @param cornerRadii 边框角度
+/// @param strokeColor 边框的颜色
+- (void)drawBorderWithBorderWidth:(CGFloat)borderWidth view:(UIView *)view cornerRadii:(CGSize)cornerRadii rectCorner:(UIRectCorner)rectCorner strokeColor:(UIColor *)strokeColor;
+
+/// 给视图添加部分圆角
+/// @param rectCorner 要画画的圆角，枚举
+/// @param view 要操作的视图
+- (void)drawPartRadiu:(UIRectCorner)rectCorner view:(UIView *)view;
+
 @end
 
 NS_ASSUME_NONNULL_END

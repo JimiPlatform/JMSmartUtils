@@ -127,6 +127,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)jm_isContainNumText:(NSString *)str;
 
 
+/// 转Json对象
+- (id)jm_toJson;
 
 @end
 

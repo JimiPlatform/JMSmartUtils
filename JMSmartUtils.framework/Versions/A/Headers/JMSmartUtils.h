@@ -13,6 +13,7 @@
 #import "NSDate+JMExt.h"
 #import "UIImage+JMExt.h"
 #import "NSThread+JMExt.h"
+#import "NSString+JMSHA.h"
 #import "JMScreen.h"
 #import "UIView+JMExt.h"
 #import "JMSystem.h"
