@@ -22,7 +22,8 @@ Pod::Spec.new do |s|
 end
 
 #打包命令
-pod package JMSmartUtils.podspec --force --no-mangle --exclude-deps
+#pod package JMSmartUtils.podspec --force --no-mangle --exclude-deps
 
 #推送命令
 #pod trunk push JMSmartUtils.podspec --verbose --allow-warnings --use-libraries
+
