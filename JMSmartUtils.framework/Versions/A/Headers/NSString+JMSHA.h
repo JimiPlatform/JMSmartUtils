@@ -1,8 +1,8 @@
 //
 //  NSString+JMSHA.h
-//  JMSmartUtils
+//  JMBaseUtils
 //
-//  Created by YaoHua Tan on 2020/1/3.
+//  Created by lzj<lizhijian_21@163.com> on 2020/8/16.
 //  Copyright © 2020 Jimi. All rights reserved.
 //
 
@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, HMAC_SHA_TYPE) {
-    HMAC_SHA_TYPE_1 = 1,
-    HMAC_SHA_TYPE_256 = 2,
-    HMAC_SHA_TYPE_512 = 3
+typedef NS_ENUM(NSInteger, JM_SHA_TYPE) {
+    JM_SHA_TYPE_1 = 1,
+    JM_SHA_TYPE_256 = 2,
+    JM_SHA_TYPE_512 = 3
 };
 
 @interface NSString (JMSHA)
@@ -24,7 +24,8 @@ typedef NS_ENUM(NSInteger, HMAC_SHA_TYPE) {
 
 /// SHA加密
 /// @param key 加密的key
-- (NSString *)jm_hmacSHAStringWithKey:(NSString *)key encryptMode:(HMAC_SHA_TYPE)encryptMode;
+/// @param type 加密类型
+- (NSString *)jm_shaWithKey:(NSString *)key type:(JM_SHA_TYPE)type;
 
 @end
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JMSmartUtils"
-  s.version      = "1.0.3"
+  s.version      = "1.0.5"
   s.summary      = "Provide basic functions and extensions for Jimi iOS Platform."
 
   s.description  = <<-DESC

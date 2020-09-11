@@ -1,14 +1,14 @@
 //
-//  JMSystem.h
-//  JMSmartUtils
+//  JMScreen.h
+//  JMBaseUtils
 //
-//  Created by lzj<lizhijian_21@163.com> on 2019/8/5.
-//  Copyright © 2019 Jimi. All rights reserved.
+//  Created by lzj<lizhijian_21@163.com> on 2020/8/18.
+//  Copyright © 2020 Jimi. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "JMSingleton.h"
 #import <UIKit/UIKit.h>
+#import "JMSingleton.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,21 +28,20 @@ extern CGFloat JMScreenWidth(void);
 extern CGFloat JMStatusBarHeight(void);
 extern CGFloat JMNavBarHeight(void);
 extern JMScreenSizeType JMscreenSizeType(void);
-extern CGFloat JMSysVersion(void);
 extern BOOL JMIsIPad(void);
-extern CGFloat JMScale(void);
+extern CGFloat JMScale(void);   //针对于8的缩放比
 
 @interface JMScreen : NSObject
 singleton_h();
 
-@property (nonatomic, assign, readonly) CGRect screenFrame;
-@property (nonatomic, assign, readonly) CGFloat screenHeight;
-@property (nonatomic, assign, readonly) CGFloat screenWidth;
-@property (nonatomic, assign, readonly) CGFloat statusBarHeight;
-@property (nonatomic, assign, readonly) CGFloat navBarHeight;
+@property (nonatomic, assign, readonly) CGRect screenFrame;     //屏幕尺寸
+@property (nonatomic, assign, readonly) CGFloat screenHeight;   //屏幕高度
+@property (nonatomic, assign, readonly) CGFloat screenWidth;    //屏幕宽度
+@property (nonatomic, assign, readonly) CGFloat statusBarHeight;    //状态栏高度
+@property (nonatomic, assign, readonly) CGFloat navBarHeight;       //导航栏高度
 
-@property (nonatomic, assign, readonly) JMScreenSizeType screenSizeType;
-@property (nonatomic, assign, readonly) BOOL isIPad;
+@property (nonatomic, assign, readonly) JMScreenSizeType screenSizeType;    //屏幕尺寸类型
+@property (nonatomic, assign, readonly) BOOL isIPad;    //是否是IPAD
 
 #pragma mark -
 
@@ -59,10 +58,6 @@ singleton_h();
 + (JMScreenSizeType)screenSizeType;
 
 + (BOOL)isIPad;
-
-#pragma mark -
-
-
 
 @end
 

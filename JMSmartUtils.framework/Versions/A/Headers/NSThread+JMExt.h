@@ -1,8 +1,8 @@
 //
 //  NSThread+JMExt.h
-//  JMSmartUtils
+//  JMBaseUtils
 //
-//  Created by YaoHua Tan on 2020/1/6.
+//  Created by lzj<lizhijian_21@163.com> on 2020/8/16.
 //  Copyright © 2020 Jimi. All rights reserved.
 //
 
@@ -12,16 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSThread (JMExt)
 
+@property (atomic, assign) BOOL jm_isSleep;     //是否正在休眠
+@property (atomic, strong) NSCondition *jm_condition;   //线程信号量
 
-@property (atomic, assign) BOOL isSleep;
-@property (atomic, strong) NSCondition *condition;
+/// 休眠线程
+/// @param ti 休眠时间（秒）
+- (void)jm_sleep:(NSTimeInterval)ti;
 
-/// 休眠
-/// @param ti 休眠时间
-- (void)jm_sleepForTime:(NSTimeInterval)ti;
-
-/// 唤醒
-- (void)jm_unSleep;
+/// 唤醒线程
+- (void)jm_wakeup;
 
 @end
 

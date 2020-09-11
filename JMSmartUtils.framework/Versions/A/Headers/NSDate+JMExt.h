@@ -1,78 +1,81 @@
 //
 //  NSDate+JMExt.h
-//  JMSmartUtils
+//  JMBaseUtils
 //
-//  Created by YaoHua Tan on 2020/1/3.
-//  Copyright © 2020 Jimi. All rights reserved.
+//  Created by lzj<lizhijian_21@163.com> on 2020/8/11.
+//  Copyright © 2020 lzj<lizhijian_21@163.com><lizhijian_21@163.com>. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-//外部全局变量
-
 /// 日期格式为 @"yyyy-MM-dd HH:mm:ss"
-extern NSString *NSDate_Format_DateAndTime(void);
+extern NSString *NSDateFormat_yyyy_MM_dd_HH_mm_ss(void);
 
 /// 日期格式为 @"yyyyMMddHHmmss"
-extern NSString *NSDate_Format_DateAndTime2(void);
+extern NSString *NSDateFormat_yyyyMMddHHmmss(void);
 
 /// 日期格式为 @"yyyy-MM-dd"
-extern NSString *NSDate_Format_Date(void);
+extern NSString *NSDateFormat_yyyy_MM_dd(void);
 
 /// 日期格式为 @"dd-MM-yyyy"
-extern NSString *NSDate_Format_Day_Month_Year(void);
+extern NSString *NSDateFormat_dd_MM_yyyy(void);
 
 /// 日期格式为 @"yyyyMMdd"
-extern NSString *NSDate_Format_Date_YearMonthDay(void);
+extern NSString *NSDateFormat_yyyyMMdd(void);
 
 /// 日期格式为 @"yyyy"
-extern NSString *NSDate_Format_Year(void);
+extern NSString *NSDateFormat_Year(void);
 
 /// 日期格式为 @"MM"
-extern NSString *NSDate_Format_Month(void);
+extern NSString *NSDateFormat_Month(void);
 
 /// 日期格式为 @"dd"
-extern NSString *NSDate_Format_Day(void);
+extern NSString *NSDateFormat_Day(void);
 
 /// 日期格式为 @"HH"
-extern NSString *NSDate_Format_Hour(void);
+extern NSString *NSDateFormat_Hour(void);
 
 /// 日期格式为 @"mm"
-extern NSString *NSDate_Format_Min(void);
+extern NSString *NSDateFormat_Min(void);
 
 /// 日期格式为 @"ss"
-extern NSString *NSDate_Format_Sec(void);
+extern NSString *NSDateFormat_Sec(void);
 
 
 @interface NSDate (JMExt)
 
-/// 按照日期格式获取日期字符串
+/// 获取日期字符串
 /// @param dateFormatStr 时间格式字符串，如，‘MM-dd’
 - (NSString *)jm_toString:(NSString *)dateFormatStr;
 
-/// 返回具体单位时间
-/// @param dateFormatStr 具体时间格式
-- (NSInteger)jm_getDate:(NSString *)dateFormatStr;
+/// 转换为本地时区的Date
+- (NSDate *)jm_localDate;
 
-///  将0时区Date转换成当前时区的Date
-- (NSDate *)jm_getlocalDate;
-
-/// 将本地时区时间转换成0时区的时间
-- (NSDate *)jm_getDateForUTC;
+/// 转换为0时区的Date
+- (NSDate *)jm_utcDate;
 
 /// 获取当月的天数
-- (NSUInteger)jm_getNumberOfDaysInMonth;
+- (NSUInteger)jm_daysOfMonth;
 
-/// 获取本地时区与0时区的时差时间
-- (NSInteger)jm_getTimeIntervalFromGMT;
+/// 获取本地时区与0时区的时差时间（秒）
+- (NSInteger)jm_intervalFromUTC;
 
-/// 获取某天零点时间
-- (NSDate *)jm_getDayZeroHourOfDate;
+/// 获取当天零点时间
+- (NSDate *)jm_zero;
 
 /// 是否为闰年
 - (BOOL)jm_isLeapYear;
+
+/// 将时间拆分成具体单位并存入字典
+- (NSMutableDictionary *)jm_toTimeDictionary;
+
+/// 将日期格式化字符串转成NSDateFormatter
+/// @param dateFormatStr 转换后的NSDateFormatter
+- (NSDateFormatter *)jm_utcDateFormatter:(NSString *)dateFormatStr;
+
+#pragma mark - StaticAPI
 
 /// 获取当前时区的时间
 + (NSDate *)jm_localDate;
@@ -80,20 +83,17 @@ extern NSString *NSDate_Format_Sec(void);
 /// 获取当前UTC的时间
 + (NSDate *)jm_utcDate;
 
-///  将时间转换为UTC时间
+/// 将时间转换为UTC时间
 /// @param time 要转的时间，单位秒
-+ (NSTimeInterval)jm_getTimeForUTC:(NSTimeInterval)time;
++ (NSTimeInterval)jm_utcTime:(NSTimeInterval)time;
 
 /// 将时间转换为当期时区时间
 /// @param time 要转的时间，单位秒
-+ (NSTimeInterval)jm_getLocalTime:(NSTimeInterval)time;
-
-/// 将时间拆分成具体单位并存入字典
-- (NSDictionary *)jm_getTimeDic;
++ (NSTimeInterval)jm_localTime:(NSTimeInterval)time;
 
 /// 将某一时间，单位秒，转为日期拆分成具体的时间单位，存入字典
 /// @param time 要转的时间，单位秒
-+ (NSDictionary *)jm_getTimeDic:(NSTimeInterval)time;
++ (NSMutableDictionary *)jm_timeDictionary:(NSTimeInterval)time;
 
 
 @end

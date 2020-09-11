@@ -16,6 +16,7 @@
 
 #ifndef JMSingleton_h
 #define JMSingleton_h
+#ifndef singleton_h
 #import <objc/message.h>
 
 // ## : 连接字符串和参数
@@ -104,5 +105,5 @@ return _instance; \
 }
 
 #endif
-
+#endif
 #endif /* JMSingleton_h */

@@ -1,20 +1,21 @@
 //
 //  UIColor+JMExt.h
-//  JMSmartUtils
+//  JMBaseUtils
 //
-//  Created by lzj<lizhijian_21@163.com> on 2019/11/28.
-//  Copyright © 2019 Jimi. All rights reserved.
+//  Created by lzj<lizhijian_21@163.com> on 2020/8/16.
+//  Copyright © 2020 Jimi. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIColor.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern UIColor *JMColor(NSInteger r, NSInteger g, NSInteger b);
-extern UIColor *JMColorWithAlpha(NSInteger r, NSInteger g, NSInteger b, CGFloat a);
-extern UIColor *JMColorFromRGB(NSInteger rgb);
-extern UIColor *JMColorFromRrgWithAlpha(NSInteger rgb, CGFloat alpha);
-extern UIColor *JMColorRandom(void);
+extern UIColor *jmColor(NSInteger r, NSInteger g, NSInteger b);
+extern UIColor *jmColorWithAlpha(NSInteger r, NSInteger g, NSInteger b, CGFloat a);
+extern UIColor *jmColorFromRGB(NSInteger rgb);
+extern UIColor *jmColorFromRrgWithAlpha(NSInteger rgb, CGFloat alpha);
+extern UIColor *jmColorRandom(void);
 
 @interface UIColor (JMExt)
 
@@ -32,12 +33,15 @@ extern UIColor *JMColorRandom(void);
 + (UIColor *)jm_color:(NSInteger)rgb a:(CGFloat)a;
 + (UIColor *)jm_colorRandom;
 
+#pragma mark - 
+
 /// 将颜色值转为整型
-- (NSInteger)jm_hexFromColor;
+- (NSInteger)jm_toHexNumber;
 
 /// 将颜色按照给出的程度加深或淡化
 /// @param intensity 颜色强度
-- (UIColor *)jm_colorXIntensity:(CGFloat)intensity;
+- (UIColor *)jm_colorWithIntensity:(CGFloat)intensity;
+
 
 @end
 

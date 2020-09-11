@@ -1,14 +1,16 @@
 //
-//  UIView+JMExtFrame.h
-//  JMSmartUtils
+//  UIView+JMFrame.h
+//  JMBaseUtils
 //
-//  Created by lizhijian on 2017/9/22.
-//  Copyright © 2017年 Concox. All rights reserved.
+//  Created by lzj<lizhijian_21@163.com> on 2020/8/18.
+//  Copyright © 2020 Jimi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (JMExtFrame)
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIView (JMFrame)
 
 @property (nonatomic) CGFloat jm_width;
 @property (nonatomic) CGFloat jm_height;
@@ -25,3 +27,5 @@
 @property (readonly) CGPoint jm_topRight;
 
 @end
+
+NS_ASSUME_NONNULL_END

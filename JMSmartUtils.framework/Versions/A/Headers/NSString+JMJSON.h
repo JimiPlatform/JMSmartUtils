@@ -1,5 +1,5 @@
 //
-//  NSDictionary+JMExt.h
+//  NSString+JMJSON.h
 //  JMBaseUtils
 //
 //  Created by lzj<lizhijian_21@163.com> on 2020/8/16.
@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary (JMExt)
+@interface NSString (JMJSON)
 
-/// 转换为Json字符串
-- (NSString *)jm_toJsonString;
+/// 将字符串转成NSArray或NSDictionary对象
+- (id)jm_toJsonObj;
 
 @end
 
