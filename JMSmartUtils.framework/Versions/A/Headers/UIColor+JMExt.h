@@ -11,11 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern UIColor *jmColor(NSInteger r, NSInteger g, NSInteger b);
-extern UIColor *jmColorWithAlpha(NSInteger r, NSInteger g, NSInteger b, CGFloat a);
-extern UIColor *jmColorFromRGB(NSInteger rgb);
-extern UIColor *jmColorFromRrgWithAlpha(NSInteger rgb, CGFloat alpha);
-extern UIColor *jmColorRandom(void);
+extern UIColor *JMColor(NSInteger r, NSInteger g, NSInteger b);
+extern UIColor *JMColorWithAlpha(NSInteger r, NSInteger g, NSInteger b, CGFloat a);
+extern UIColor *JMColorFromRGB(NSInteger rgb);
+extern UIColor *JMColorFromRrgWithAlpha(NSInteger rgb, CGFloat alpha);
+extern UIColor *JMColorFromHex(NSString *str);
+extern UIColor *JMColorRandom(void);
 
 @interface UIColor (JMExt)
 

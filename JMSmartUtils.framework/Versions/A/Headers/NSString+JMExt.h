@@ -82,8 +82,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param fontSize 字体大小
 /// @param alignment 字符对齐方式
 - (NSMutableAttributedString *)jm_toColor:(UIColor *)color1
-                                  specialColor:(UIColor *)color2
-                                specialStrings:(NSArray *)specialStrings
+                                  specialColor:(UIColor * _Nullable)color2
+                                specialStrings:(NSArray * _Nullable)specialStrings
                                    lineSpacing:(CGFloat)lineSpace
                                       fontSize:(CGFloat)fontSize
                                      alignment:(NSTextAlignment)alignment;
