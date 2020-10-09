@@ -1,22 +1,28 @@
 //
 //  SettingItemGroup.h
-//  Light
+//  JMSmartUtils
 //
-//  Created by lizhijian on 15/7/17.
-//  Copyright (c) 2015年 Concox. All rights reserved.
+//  Created by lizhijian on 2020/9/22.
+//  Copyright © 2020 Jimi. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface JMSettingItemGroup : NSObject
+NS_ASSUME_NONNULL_BEGIN
 
+@class JMSettingItem;
+
+@interface JMSettingItemGroup : NSMutableArray
+
+/// 标识
 @property (nonatomic,assign) NSInteger tag;
-
-//头部标题
+/// 头部标题
 @property (nonatomic,copy) NSString *headerTitle;
-//底部标题
+/// 底部标题
 @property (nonatomic,copy) NSString *footerTitle;
-//当前分组中所有行的数据（保存的是SettingItem模型）
-@property (nonatomic,strong) NSArray *items;
+/// 当前分组中所有行的数据（保存的是SettingItem模型）
+@property (nonatomic,strong) NSArray<JMSettingItem *> *items;
 
 @end
+
+NS_ASSUME_NONNULL_END

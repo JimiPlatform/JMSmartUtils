@@ -7,23 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class JMSettingItem;
+#import "JMBaseTableViewConfig.h"
+#import "JMSettingItemGroup.h"
+#import "JMSettingItem.h"
+#import "JMSettingCustomViewItem.h"
+#import "JMSettingArrowItem.h"
+#import "JMSettingSwitchItem.h"
+#import "JMSettingLabelItem.h"
+#import "JMSettingTextFieldItem.h"
+#import "JMSettingRadioItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JMSettingTableViewCell : UITableViewCell
 
-@property (nonatomic,strong) JMSettingItem *item;   //基础数据模型
+/// 基础数据模型
+@property (nonatomic,strong,readonly) JMSettingItem *item;
 
-@property (nonatomic,assign) BOOL hiddenLastDivider;    //是否隐藏最后的分栏
-
-@property (nonatomic,copy) void(^switchBtnBlock)(void);
-@property (nonatomic,copy) void(^switchBtnWithIdBlock)(UISwitch *switchBtn);
-
-@property (nonatomic,strong) UIView *customView;
-
-+ (instancetype)cellWithTableView:(UITableView *)tableView item:(JMSettingItem *)item;
+/// 获取一个模板类Cell视图示例
+/// @param tableView UITableView对象
+/// @param item JMSettingItem数据模组
+/// @param config 全局颜色、字体等配置
++ (instancetype)cellWithTableView:(UITableView *)tableView item:(JMSettingItem *)item config:(JMBaseTableViewConfig *)config;
 
 @end
 

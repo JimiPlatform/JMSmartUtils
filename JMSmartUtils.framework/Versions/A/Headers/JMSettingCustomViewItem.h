@@ -8,10 +8,10 @@
 
 #import "JMSettingItem.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface JMSettingCustomViewItem : JMSettingItem
 
-@property (nonatomic,assign) Class destVC;
-
-- (instancetype)initWithIcon:(NSString *)icon title:(NSString *)title destClass:(Class)destVc;
-
 @end
+
+NS_ASSUME_NONNULL_END
